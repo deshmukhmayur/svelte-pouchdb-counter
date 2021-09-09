@@ -1,0 +1,16 @@
+version: '3'
+services:
+  couchdb:
+    image: couchdb:3
+    environment:
+      COUCHDB_USER: couchdb
+      COUCHDB_PASSWORD: test123
+    volumes:
+      - couch_data:/opt/couchdb/data
+      - couch_config:/opt/couchdb/etc/local.d
+    ports:
+      - 5984:5984
+
+volumes:
+  couch_data:
+  couch_config:
